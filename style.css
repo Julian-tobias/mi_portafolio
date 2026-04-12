@@ -7,6 +7,38 @@ body {
     line-height: 1.6;
 }
 
+body.dark-theme {
+    background-color: #101820;
+    color: #e5e5e5;
+}
+
+body.dark-theme header {
+    background: linear-gradient(135deg, #343a40, #1f2a36);
+}
+
+body.dark-theme section {
+    background: #1b2430;
+    box-shadow: 0 2px 20px rgba(0,0,0,0.35);
+}
+
+body.dark-theme .project {
+    background: #15202b;
+    border-left-color: #17a2b8;
+}
+
+body.dark-theme #skills li {
+    background: linear-gradient(135deg, #0d6efd, #0a58ca);
+}
+
+body.dark-theme #contact a,
+body.dark-theme .action-button {
+    color: white;
+}
+
+body.dark-theme .demo-card {
+    background: #18212c;
+}
+
 header {
     background: linear-gradient(135deg, #007bff, #0056b3);
     color: white;
@@ -91,6 +123,43 @@ section {
 
 #skills li:hover {
     background: linear-gradient(135deg, #0056b3, #004085);
+}
+
+#demo {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+    padding: 2rem;
+}
+
+.demo-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-top: 1rem;
+}
+
+.action-button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 0.9rem 1.4rem;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background 0.2s, transform 0.2s;
+    margin-top: 1rem;
+}
+
+.action-button:hover {
+    background: #0056b3;
+    transform: translateY(-1px);
+}
+
+#theme-status {
+    margin-top: 1rem;
+    color: #444;
+    font-weight: 600;
 }
 
 #contact {
