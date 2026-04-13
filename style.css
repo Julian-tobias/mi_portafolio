@@ -276,6 +276,106 @@ a {
     transition: transform 0.25s ease, box-shadow 0.25s ease;
 }
 
+.achievements-section {
+    background: rgba(255,255,255,0.03);
+}
+
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+}
+
+.achievement-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 28px;
+    padding: 1.8rem;
+}
+
+.achievement-card h3 {
+    margin: 0 0 1rem;
+    color: #ffffff;
+}
+
+.tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1.5rem;
+}
+
+.tech-item {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(59,130,246,0.14);
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 20px;
+    padding: 1rem 1.2rem;
+    color: #e2e8f0;
+    font-weight: 700;
+    text-align: center;
+}
+
+.featured-project {
+    background: rgba(255,255,255,0.04);
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.feature-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 28px;
+    padding: 1.8rem;
+}
+
+.feature-card h3 {
+    margin: 0 0 1rem;
+    color: #ffffff;
+}
+
+.feature-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    gap: 0.8rem;
+}
+
+.feature-card li {
+    position: relative;
+    padding-left: 1.4rem;
+    color: rgba(226,232,240,0.82);
+}
+
+.feature-card li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+}
+
+.featured-actions {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+}
+
+.project-use {
+    margin-top: 1rem;
+    color: rgba(226,232,240,0.78);
+    font-size: 0.95rem;
+    line-height: 1.7;
+}
+
+
 .project-card:hover {
     transform: translateY(-4px);
     box-shadow: 0 28px 80px rgba(0,0,0,0.28);
