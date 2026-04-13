@@ -80,6 +80,25 @@ a {
     background: #dbeafe;
 }
 
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28px;
+    width: 34px;
+}
+
+.menu-button span {
+    display: block;
+    height: 3px;
+    border-radius: 999px;
+    background: #dbeafe;
+}
+
 .nav-menu a {
     color: rgba(226,232,240,0.88);
     font-size: 0.95rem;
@@ -218,6 +237,30 @@ a {
     gap: 1rem;
 }
 
+.hero-highlights {
+    margin: 1.5rem 0 0;
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 0.75rem;
+}
+
+.hero-highlights li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding-left: 1rem;
+    color: rgba(226,232,240,0.85);
+    position: relative;
+}
+
+.hero-highlights li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: #60a5fa;
+}
+
 .button {
     display: inline-flex;
     align-items: center;
@@ -330,6 +373,7 @@ a {
 
 .section {
     padding: 4rem 0;
+    scroll-margin-top: 96px;
 }
 
 .section-header {
@@ -366,7 +410,16 @@ a {
 }
 
 .about-grid {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+.projects-intro-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 24px;
+    padding: 1.8rem;
+    margin-bottom: 2rem;
+    color: rgba(226,232,240,0.86);
 }
 
 .about-card {
