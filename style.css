@@ -336,6 +336,97 @@ a {
     font-size: 0.95rem;
 }
 
+.project-page {
+    padding: 4rem 0;
+}
+
+.project-page .container {
+    max-width: 960px;
+}
+
+.project-page h1 {
+    margin: 0 0 1rem;
+    font-size: clamp(2.4rem, 4vw, 3.4rem);
+}
+
+.project-page .project-summary {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 28px;
+    padding: 2rem;
+    box-shadow: 0 24px 80px rgba(0,0,0,0.22);
+    margin-top: 1.5rem;
+}
+
+.clock-card,
+.stats-card {
+    padding: 2rem;
+    border-radius: 26px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.large-text {
+    margin: 1rem 0 0;
+    font-size: 3rem;
+    letter-spacing: 0.05em;
+}
+
+.alarm-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-top: 1.25rem;
+}
+
+.alarm-form label {
+    color: rgba(226,232,240,0.82);
+    min-width: 160px;
+}
+
+.alarm-form input {
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.06);
+    color: #e2e8f0;
+    border-radius: 14px;
+    padding: 0.9rem 1rem;
+    min-width: 170px;
+}
+
+.stats-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 1rem;
+}
+
+.stats-table th,
+.stats-table td {
+    padding: 1rem 1rem;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+}
+
+.stats-table th {
+    text-align: left;
+    color: #93c5fd;
+    font-weight: 700;
+}
+
+.stats-table td {
+    color: rgba(226,232,240,0.86);
+}
+
+@media (max-width: 720px) {
+    .project-page .container {
+        max-width: 100%;
+    }
+
+    .stats-table th,
+    .stats-table td {
+        padding: 0.9rem 0.75rem;
+    }
+}
+
 .timeline-date {
     display: inline-flex;
     align-items: center;
