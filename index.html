@@ -15,7 +15,12 @@
     <header class="site-header">
         <div class="container header-inner">
             <a class="brand" href="#">Julian Tobias</a>
-            <nav class="nav-menu">
+            <button id="menuButton" class="menu-button" aria-label="Abrir menú de navegación" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
                 <a href="#about">Sobre mí</a>
                 <a href="#projects">Proyectos</a>
                 <a href="#achievements">Logros</a>
@@ -223,10 +228,23 @@
                     <h2>Contacto</h2>
                     <p>Estoy disponible para colaborar en proyectos y crecer con experiencia real.</p>
                 </div>
-                <div class="contact-details">
-                    <p><strong>Email:</strong> <a href="mailto:juliantobias2005x@gmail.com">juliantobias2005x@gmail.com</a></p>
-                    <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/julian" target="_blank" rel="noreferrer">linkedin.com/in/julian</a></p>
-                    <p><strong>GitHub:</strong> <a href="https://github.com/Julian-tobias" target="_blank" rel="noreferrer">github.com/Julian-tobias</a></p>
+                <div class="contact-grid">
+                    <div class="contact-details">
+                        <p><strong>Email:</strong> <a href="mailto:juliantobias2005x@gmail.com">juliantobias2005x@gmail.com</a></p>
+                        <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/julian" target="_blank" rel="noreferrer">linkedin.com/in/julian</a></p>
+                        <p><strong>GitHub:</strong> <a href="https://github.com/Julian-tobias" target="_blank" rel="noreferrer">github.com/Julian-tobias</a></p>
+                        <p>También podés enviarme un mensaje directo desde este formulario y te responderé lo antes posible.</p>
+                    </div>
+                    <form id="contactForm" class="contact-form">
+                        <label for="contactName">Nombre</label>
+                        <input id="contactName" type="text" placeholder="Tu nombre" required>
+                        <label for="contactEmail">Email</label>
+                        <input id="contactEmail" type="email" placeholder="tu@correo.com" required>
+                        <label for="contactMessage">Mensaje</label>
+                        <textarea id="contactMessage" rows="5" placeholder="Escribe tu propuesta o pregunta"></textarea>
+                        <button type="submit" class="button primary">Enviar mensaje</button>
+                        <p id="contactAlert" class="form-alert"></p>
+                    </form>
                 </div>
             </div>
         </section>

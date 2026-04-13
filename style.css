@@ -61,6 +61,25 @@ a {
     gap: 1rem;
 }
 
+.menu-button {
+    display: none;
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    cursor: pointer;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 28px;
+    width: 34px;
+}
+
+.menu-button span {
+    display: block;
+    height: 3px;
+    border-radius: 999px;
+    background: #dbeafe;
+}
+
 .nav-menu a {
     color: rgba(226,232,240,0.88);
     font-size: 0.95rem;
@@ -72,6 +91,92 @@ a {
 .nav-menu a:hover {
     background: rgba(59,130,246,0.18);
     color: #ffffff;
+}
+
+.contact-grid {
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+}
+
+.contact-form {
+    display: grid;
+    gap: 1rem;
+}
+
+.contact-form label {
+    color: rgba(226,232,240,0.82);
+    font-size: 0.95rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    border: 1px solid rgba(255,255,255,0.16);
+    background: rgba(255,255,255,0.04);
+    color: #e2e8f0;
+    border-radius: 16px;
+    padding: 1rem 1.1rem;
+    font-size: 1rem;
+}
+
+.contact-form textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-form .button {
+    width: fit-content;
+}
+
+@media (max-width: 860px) {
+    .contact-grid,
+    .feature-grid,
+    .stats-grid,
+    .achievement-grid,
+    .tool-grid,
+    .project-grid,
+    .about-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 720px) {
+    .header-inner {
+        position: relative;
+    }
+
+    .menu-button {
+        display: flex;
+    }
+
+    .nav-menu {
+        position: absolute;
+        top: 100%;
+        right: 1rem;
+        left: 1rem;
+        background: rgba(8,18,38,0.98);
+        flex-direction: column;
+        padding: 1rem;
+        border-radius: 24px;
+        gap: 0.75rem;
+        transform: translateY(-10px);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .nav-menu.active {
+        opacity: 1;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+
+    .nav-menu a {
+        width: 100%;
+        padding: 0.85rem 1rem;
+    }
 }
 
 .hero {
