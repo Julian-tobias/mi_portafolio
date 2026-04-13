@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de gestión de clientes | Julian Tobias</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../index.html">Julian Tobias</a>
+            <nav class="nav-menu">
+                <a href="../index.html#projects">Proyectos</a>
+                <a href="../index.html#about">Sobre mí</a>
+                <a href="../index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="project-page">
+        <div class="container">
+            <div class="project-hero">
+                <div>
+                    <p class="eyebrow">Proyecto profesional</p>
+                    <h1>Sistema de gestión de clientes</h1>
+                    <p class="project-intro">Solución empresarial para registrar, organizar y hacer seguimiento de clientes. Incluye edición directa, eliminación segura, filtros por estado y datos persistentes en el navegador.</p>
+                    <div class="project-buttons">
+                        <a class="button secondary" href="../index.html">Volver al portafolio</a>
+                        <a class="button primary" href="#demoSection">Ir a la demo</a>
+                    </div>
+                </div>
+                <div class="project-stats">
+                    <div class="stat-block">
+                        <p class="stat-value" id="totalClients">0</p>
+                        <p class="stat-label">Clientes registrados</p>
+                    </div>
+                    <div class="stat-block">
+                        <p class="stat-value" id="activeCount">0</p>
+                        <p class="stat-label">Clientes activos</p>
+                    </div>
+                    <div class="stat-block">
+                        <p class="stat-value" id="recentClient">—</p>
+                        <p class="stat-label">Último cliente añadido</p>
+                    </div>
+                </div>
+            </div>
+
+            <section class="section project-summary">
+                <h2>Por qué este proyecto destaca</h2>
+                <ul>
+                    <li>Interfaz corporativa y profesional pensada para usuarios de negocio.</li>
+                    <li>Administración completa: crear, editar, eliminar y clasificar clientes.</li>
+                    <li>Búsqueda instantánea, filtros por estado y métricas clave actualizadas al instante.</li>
+                    <li>Persistencia local para mantener la base de clientes en el navegador.</li>
+                </ul>
+            </section>
+
+            <section id="demoSection" class="section project-summary demo-grid">
+                <div class="demo-panel">
+                    <div class="panel-head">
+                        <h2>Registrar y actualizar clientes</h2>
+                        <p>Completa los datos del cliente y usa el formulario para mantener la cartera siempre actualizada.</p>
+                    </div>
+
+                    <form id="clientForm" class="client-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="nameInput">Nombre completo</label>
+                                <input id="nameInput" type="text" placeholder="Nombre del cliente" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="emailInput">Correo electrónico</label>
+                                <input id="emailInput" type="email" placeholder="cliente@empresa.com" required>
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phoneInput">Teléfono</label>
+                                <input id="phoneInput" type="tel" placeholder="+54 11 1234 5678" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="statusInput">Estado del cliente</label>
+                                <select id="statusInput" required>
+                                    <option value="Prospecto">Prospecto</option>
+                                    <option value="Cliente">Cliente</option>
+                                    <option value="Socio">Socio</option>
+                                    <option value="Archivado">Archivado</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="notesInput">Notas / seguimiento</label>
+                            <textarea id="notesInput" placeholder="Agregar detalles, comentarios o contexto adicional"></textarea>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="button primary" id="submitButton">Agregar cliente</button>
+                            <button type="button" class="button secondary" id="resetFormButton">Limpiar formulario</button>
+                        </div>
+
+                        <p id="alertMessage" class="form-alert"></p>
+                    </form>
+                </div>
+
+                <div class="client-list-panel">
+                    <div class="filter-row">
+                        <div class="filter-field">
+                            <label for="searchInput">Buscar cliente</label>
+                            <input id="searchInput" type="text" placeholder="Buscar por nombre o email">
+                        </div>
+                        <div class="filter-field">
+                            <label for="statusFilter">Filtrar por estado</label>
+                            <select id="statusFilter">
+                                <option value="Todos">Todos</option>
+                                <option value="Prospecto">Prospecto</option>
+                                <option value="Cliente">Cliente</option>
+                                <option value="Socio">Socio</option>
+                                <option value="Archivado">Archivado</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="summary-grid">
+                        <div class="stat-block">
+                            <p class="stat-value" id="prospectCount">0</p>
+                            <p class="stat-label">Prospectos</p>
+                        </div>
+                        <div class="stat-block">
+                            <p class="stat-value" id="customerCount">0</p>
+                            <p class="stat-label">Clientes activos</p>
+                        </div>
+                        <div class="stat-block">
+                            <p class="stat-value" id="partnerCount">0</p>
+                            <p class="stat-label">Socios estratégicos</p>
+                        </div>
+                    </div>
+
+                    <div class="table-wrapper">
+                        <table class="stats-table">
+                            <thead>
+                                <tr>
+                                    <th>Cliente</th>
+                                    <th>Email</th>
+                                    <th>Teléfono</th>
+                                    <th>Estado</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody id="clientTable"></tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-actions">
+                        <button type="button" class="button danger" id="clearAllButton">Eliminar todos</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Julian Tobias — Portafolio profesional</p>
+        </div>
+    </footer>
+
+    <script>
+        const clientForm = document.getElementById('clientForm');
+        const nameInput = document.getElementById('nameInput');
+        const emailInput = document.getElementById('emailInput');
+        const phoneInput = document.getElementById('phoneInput');
+        const statusInput = document.getElementById('statusInput');
+        const notesInput = document.getElementById('notesInput');
+        const searchInput = document.getElementById('searchInput');
+        const statusFilter = document.getElementById('statusFilter');
+        const clientTable = document.getElementById('clientTable');
+        const totalClients = document.getElementById('totalClients');
+        const activeCount = document.getElementById('activeCount');
+        const recentClient = document.getElementById('recentClient');
+        const prospectCount = document.getElementById('prospectCount');
+        const customerCount = document.getElementById('customerCount');
+        const partnerCount = document.getElementById('partnerCount');
+        const clearAllButton = document.getElementById('clearAllButton');
+        const resetFormButton = document.getElementById('resetFormButton');
+        const alertMessage = document.getElementById('alertMessage');
+        const submitButton = document.getElementById('submitButton');
+
+        let editingId = null;
+
+        function loadClients() {
+            return JSON.parse(localStorage.getItem('clientes') || '[]');
+        }
+
+        function saveClients(clients) {
+            localStorage.setItem('clientes', JSON.stringify(clients));
+        }
+
+        function formatRecent(name) {
+            return name ? name : '—';
+        }
+
+        function showAlert(message, type = 'success') {
+            alertMessage.textContent = message;
+            alertMessage.style.color = type === 'success' ? '#a5f3fc' : '#fda4af';
+            window.setTimeout(() => {
+                alertMessage.textContent = '';
+            }, 2500);
+        }
+
+        function resetForm() {
+            clientForm.reset();
+            editingId = null;
+            submitButton.textContent = 'Agregar cliente';
+        }
+
+        function getFilteredClients() {
+            const query = searchInput.value.trim().toLowerCase();
+            const status = statusFilter.value;
+            return loadClients().filter(client => {
+                const matchesText = (client.name || '').toLowerCase().includes(query) || (client.email || '').toLowerCase().includes(query);
+                const clientStatus = client.status || 'Archivado';
+                const matchesStatus = status === 'Todos' || clientStatus === status;
+                return matchesText && matchesStatus;
+            });
+        }
+
+        function renderClients() {
+            const clients = getFilteredClients();
+            clientTable.innerHTML = '';
+
+            if (clients.length === 0) {
+                clientTable.innerHTML = '<tr><td colspan="5">No se encontraron clientes.</td></tr>';
+            } else {
+                clients.forEach(client => {
+                    const row = document.createElement('tr');
+                    const statusClass = (client.status || 'Archivado').toLowerCase();
+                    row.innerHTML = `
+                        <td>
+                            <strong>${client.name}</strong>
+                            <div class="client-note">${client.notes || 'Sin notas adicionales'}</div>
+                        </td>
+                        <td>${client.email}</td>
+                        <td>${client.phone}</td>
+                        <td><span class="status-badge ${statusClass}">${client.status}</span></td>
+                        <td>
+                            <button type="button" class="button tertiary small edit-btn" data-id="${client.id}">Editar</button>
+                            <button type="button" class="button danger small delete-btn" data-id="${client.id}">Eliminar</button>
+                        </td>
+                    `;
+                    clientTable.appendChild(row);
+                });
+            }
+
+            updateSummary();
+        }
+
+        function updateSummary() {
+            const clients = loadClients();
+            totalClients.textContent = clients.length;
+            const active = clients.filter(client => client.status !== 'Archivado');
+            activeCount.textContent = active.length;
+            prospectCount.textContent = clients.filter(client => client.status === 'Prospecto').length;
+            customerCount.textContent = clients.filter(client => client.status === 'Cliente').length;
+            partnerCount.textContent = clients.filter(client => client.status === 'Socio').length;
+
+            const recent = clients.slice().sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))[0];
+            recentClient.textContent = formatRecent(recent ? recent.name : '—');
+        }
+
+        function startEdit(clientId) {
+            const clients = loadClients();
+            const client = clients.find(item => String(item.id) === String(clientId));
+            if (!client) return;
+
+            editingId = client.id;
+            nameInput.value = client.name;
+            emailInput.value = client.email;
+            phoneInput.value = client.phone;
+            statusInput.value = client.status;
+            notesInput.value = client.notes || '';
+            submitButton.textContent = 'Actualizar cliente';
+            showAlert('Editando cliente: ' + client.name, 'success');
+        }
+
+        function removeClient(clientId) {
+            if (!window.confirm('¿Eliminar este cliente permanentemente?')) {
+                return;
+            }
+            const clients = loadClients().filter(client => String(client.id) !== String(clientId));
+            saveClients(clients);
+            renderClients();
+            showAlert('Cliente eliminado correctamente.');
+        }
+
+        clientForm.addEventListener('submit', event => {
+            event.preventDefault();
+            const clients = loadClients();
+            const clientData = {
+                id: editingId || Date.now(),
+                name: nameInput.value.trim(),
+                email: emailInput.value.trim(),
+                phone: phoneInput.value.trim(),
+                status: statusInput.value,
+                notes: notesInput.value.trim(),
+                createdAt: editingId ? clients.find(client => String(client.id) === String(editingId)).createdAt : new Date().toISOString()
+            };
+
+            if (editingId) {
+                const index = clients.findIndex(client => String(client.id) === String(editingId));
+                clients[index] = clientData;
+                showAlert('Cliente actualizado con éxito.');
+            } else {
+                clients.push(clientData);
+                showAlert('Cliente agregado con éxito.');
+            }
+
+            saveClients(clients);
+            resetForm();
+            renderClients();
+        });
+
+        resetFormButton.addEventListener('click', () => {
+            resetForm();
+        });
+
+        clearAllButton.addEventListener('click', () => {
+            if (!window.confirm('¿Eliminar todos los clientes? Esta acción no se puede deshacer.')) {
+                return;
+            }
+            saveClients([]);
+            renderClients();
+            showAlert('Todos los clientes han sido eliminados.');
+        });
+
+        clientTable.addEventListener('click', event => {
+            const button = event.target.closest('button');
+            if (!button) return;
+            const clientId = button.dataset.id;
+
+            if (button.classList.contains('edit-btn')) {
+                startEdit(clientId);
+            }
+            if (button.classList.contains('delete-btn')) {
+                removeClient(clientId);
+            }
+        });
+
+        searchInput.addEventListener('input', renderClients);
+        statusFilter.addEventListener('change', renderClients);
+
+        renderClients();
+    </script>
+</body>
+</html>
