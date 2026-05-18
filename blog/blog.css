@@ -1,0 +1,4 @@
+.about-card { cursor: pointer; transition: box-shadow 0.3s, transform 0.3s; }
+.about-card:hover { box-shadow: 0 8px 32px rgba(59,130,246,0.13); transform: translateY(-4px) scale(1.03); }
+#postsList { gap: 2rem; }
+body { background: #101a2b; }

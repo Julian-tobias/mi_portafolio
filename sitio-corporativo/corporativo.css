@@ -1,0 +1,6 @@
+.hero { text-align: center; padding: 4rem 0 2rem; }
+.hero h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); margin-bottom: 1.2rem; }
+.hero .project-intro { color: #cbd5e1; margin-bottom: 2rem; }
+.about-card, .hero-highlights li { opacity: 0; transition: opacity 0.7s cubic-bezier(.23,1.02,.32,1); }
+.hero-highlights { margin: 2rem 0; }
+.hero-highlights li { font-size: 1.1rem; }

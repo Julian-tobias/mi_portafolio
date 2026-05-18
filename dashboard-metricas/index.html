@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard de Métricas | Julian Tobias</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../index.html">Julian Tobias</a>
+            <nav class="nav-menu">
+                <a href="../index.html#projects">Proyectos</a>
+                <a href="../index.html#about">Sobre mí</a>
+                <a href="../index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <main class="project-page">
+        <div class="container">
+            <div class="project-hero">
+                <div>
+                    <p class="eyebrow">Proyecto profesional</p>
+                    <h1>Dashboard de métricas</h1>
+                    <p class="project-intro">Panel ejecutivo con indicadores clave, tarjetas animadas y gráficos interactivos para visualizar resultados y tomar decisiones.</p>
+                    <div class="project-buttons">
+                        <a class="button secondary" href="../index.html">Volver al portafolio</a>
+                    </div>
+                </div>
+                <div class="project-stats">
+                    <div class="stat-block">
+                        <p class="stat-value" id="ventasHoy">0</p>
+                        <p class="stat-label">Ventas hoy</p>
+                    </div>
+                    <div class="stat-block">
+                        <p class="stat-value" id="usuariosActivos">0</p>
+                        <p class="stat-label">Usuarios activos</p>
+                    </div>
+                    <div class="stat-block">
+                        <p class="stat-value" id="conversion">0%</p>
+                        <p class="stat-label">Tasa de conversión</p>
+                    </div>
+                </div>
+            </div>
+            <section class="section project-summary demo-grid">
+                <div class="demo-panel">
+                    <div class="panel-head">
+                        <h2>Indicadores clave</h2>
+                        <p>Visualiza el rendimiento de tu negocio en tiempo real con animaciones y datos simulados.</p>
+                    </div>
+                    <div class="summary-grid">
+                        <div class="stat-block">
+                            <p class="stat-value" id="clientesNuevos">0</p>
+                            <p class="stat-label">Clientes nuevos</p>
+                        </div>
+                        <div class="stat-block">
+                            <p class="stat-value" id="ticketsPromedio">0</p>
+                            <p class="stat-label">Ticket promedio</p>
+                        </div>
+                        <div class="stat-block">
+                            <p class="stat-value" id="soporteResuelto">0</p>
+                            <p class="stat-label">Soporte resuelto</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="demo-panel">
+                    <div class="panel-head">
+                        <h2>Gráficos interactivos</h2>
+                        <p>Explora tendencias y compara resultados con gráficos avanzados y filtros dinámicos.</p>
+                    </div>
+                    <canvas id="ventasChart" height="180"></canvas>
+                    <canvas id="usuariosChart" height="180"></canvas>
+                </div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Julian Tobias — Portafolio profesional</p>
+        </div>
+    </footer>
+    <script src="dashboard.js"></script>
+</body>
+</html>

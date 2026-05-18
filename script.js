@@ -79,4 +79,11 @@ if (contactForm) {
     });
 }
 
+// Animación suave para .animate-fadein
+window.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.animate-fadein').forEach(el => {
+        el.classList.add('fadein-ready'); // trigger animation
+    });
+});
+
 initializeTheme();

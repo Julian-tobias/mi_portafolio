@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sitio Corporativo | Julian Tobias</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="corporativo.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../index.html">Julian Tobias</a>
+            <nav class="nav-menu">
+                <a href="../index.html#projects">Proyectos</a>
+                <a href="../index.html#about">Sobre mí</a>
+                <a href="../index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <main class="project-page">
+        <div class="container">
+            <section class="hero">
+                <h1>Soluciones digitales para empresas modernas</h1>
+                <p class="project-intro">Landing page profesional con secciones de servicios, beneficios y contacto. Diseño elegante, animaciones y enfoque en conversión.</p>
+                <div class="project-buttons">
+                    <a class="button primary" href="#contacto">Solicitar propuesta</a>
+                </div>
+            </section>
+            <section class="section" id="servicios">
+                <h2>Servicios</h2>
+                <div class="about-grid">
+                    <div class="about-card">
+                        <h3>Desarrollo web</h3>
+                        <p>Webs corporativas, landing pages y sistemas a medida con tecnologías modernas.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Branding digital</h3>
+                        <p>Identidad visual, diseño de marca y comunicación coherente en todos los canales.</p>
+                    </div>
+                    <div class="about-card">
+                        <h3>Consultoría UX/UI</h3>
+                        <p>Optimización de experiencia de usuario y conversión con prototipos y pruebas reales.</p>
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="beneficios">
+                <h2>Beneficios</h2>
+                <ul class="hero-highlights">
+                    <li>Diseño responsive y accesible</li>
+                    <li>Optimización SEO y velocidad</li>
+                    <li>Soporte y mantenimiento profesional</li>
+                </ul>
+            </section>
+            <section class="section project-summary">
+                <h2>Qué ofrece este sitio</h2>
+                <ul>
+                    <li>Secciones estratégicas para captar clientes: servicios, beneficios y contacto.</li>
+                    <li>Formulario funcional listo para integrarse con email marketing o CRM.</li>
+                    <li>Diseño corporativo con tipografía clara, tarjetas de contenido y CTA visibles.</li>
+                </ul>
+            </section>
+            <section class="section" id="contacto">
+                <h2>Contacto</h2>
+                <form id="contactForm" class="contact-form">
+                    <label for="nombre">Nombre</label>
+                    <input id="nombre" type="text" required>
+                    <label for="email">Email</label>
+                    <input id="email" type="email" required>
+                    <label for="mensaje">Mensaje</label>
+                    <textarea id="mensaje" rows="4" required></textarea>
+                    <button type="submit" class="button primary">Enviar</button>
+                    <p id="contactAlert" class="form-alert"></p>
+                </form>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Julian Tobias — Portafolio profesional</p>
+        </div>
+    </footer>
+    <script src="corporativo.js"></script>
+</body>
+</html>

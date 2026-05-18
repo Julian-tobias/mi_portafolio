@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API + Frontend | Julian Tobias</title>
+    <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="api.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-inner">
+            <a class="brand" href="../index.html">Julian Tobias</a>
+            <nav class="nav-menu">
+                <a href="../index.html#projects">Proyectos</a>
+                <a href="../index.html#about">Sobre mí</a>
+                <a href="../index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <main class="project-page">
+        <div class="container">
+            <section class="hero">
+                <h1>API + Frontend</h1>
+                <p class="project-intro">App avanzada que consume una API pública, permite búsqueda, filtrado y visualización de datos en tiempo real. Interfaz moderna y animaciones.</p>
+                <div class="project-buttons">
+                    <button class="button primary" id="reloadBtn">Recargar datos</button>
+                </div>
+            </section>
+            <section class="section project-summary">
+                <h2>Qué ofrece esta app</h2>
+                <ul>
+                    <li>Consumo real de API pública con fetch y renderizado dinámico.</li>
+                    <li>Búsqueda rápida de usuarios y recarga de datos en una interfaz moderna.</li>
+                    <li>Uso de tarjetas responsive y animaciones de carga para una experiencia pulida.</li>
+                </ul>
+            </section>
+            <section class="section" id="api-demo">
+                <h2>Usuarios (API JSONPlaceholder)</h2>
+                <div class="filter-row">
+                    <div class="filter-field">
+                        <label for="userSearch">Buscar usuario</label>
+                        <input id="userSearch" type="text" placeholder="Buscar por nombre o ciudad">
+                    </div>
+                </div>
+                <div class="about-grid" id="usersList"></div>
+            </section>
+        </div>
+    </main>
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>Julian Tobias — Portafolio profesional</p>
+        </div>
+    </footer>
+    <script src="api.js"></script>
+</body>
+</html>
